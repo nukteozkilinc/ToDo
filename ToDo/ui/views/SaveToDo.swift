@@ -17,9 +17,19 @@ class SaveToDo: UIViewController {
     }
     
     @IBAction func pressedSave(_ sender: UIButton) {
-        if let toDoText = tvToDo.text, let toDoTitle = tfTitle.text{
-            save(todo: toDoText, toDoTitle: toDoTitle)
+        
+        let alert = UIAlertController(title: "Save", message: "Are you sure?", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alert.addAction(cancelAction)
+        
+        let okeyAction = UIAlertAction(title: "Okey", style: .destructive){_ in
+            if let toDoText = self.tvToDo.text, let toDoTitle = self.tfTitle.text{
+                self.save(todo: toDoText, toDoTitle: toDoTitle)
+            }
         }
+        alert.addAction(okeyAction)
+        self.present(alert, animated: true)
+        
     }
     
     func save(todo : String, toDoTitle:String){

@@ -16,6 +16,7 @@ class UpdateToDo: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if let todo = toDos{
             tfDetailTitle.text = todo.title
             tvDetail.text = todo.note
@@ -23,9 +24,20 @@ class UpdateToDo: UIViewController {
     }
     
     @IBAction func pressedUpdate(_ sender: Any) {
-        if let todo_title = tfDetailTitle.text, let todo_detail = tvDetail.text, let todo = toDos{
-            update(todo_id: todo.id!, toDo_title: todo_title, toDo_detail: todo_detail)
+        
+        let alert = UIAlertController(title: "Update", message: "Are you sure?", preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alert.addAction(cancelAction)
+        
+        let okeyAction = UIAlertAction(title: "Okey", style: .destructive){_ in
+            if let todo_title = self.tfDetailTitle.text, let todo_detail = self.tvDetail.text, let todo = self.toDos{
+                self.update(todo_id: todo.id!, toDo_title: todo_title, toDo_detail: todo_detail)
+            }
         }
+        alert.addAction(okeyAction)
+        self.present(alert, animated: true)
+        
     }
     
     func update(todo_id:Int, toDo_title:String, toDo_detail:String){
