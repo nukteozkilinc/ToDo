@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B1DC9EE2A879972003F3D2B /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8B1DC9ED2A879972003F3D2B /* RxSwift */; };
+		8B1DC9F22A8799B8003F3D2B /* ToDoDaoRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1DC9F12A8799B8003F3D2B /* ToDoDaoRepo.swift */; };
+		8B1DC9F42A8799D8003F3D2B /* AnasayfaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1DC9F32A8799D8003F3D2B /* AnasayfaViewModel.swift */; };
+		8B1DC9F62A8799FB003F3D2B /* SaveToDoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1DC9F52A8799FB003F3D2B /* SaveToDoViewModel.swift */; };
+		8B1DC9F82A879A11003F3D2B /* UpdateToDoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1DC9F72A879A11003F3D2B /* UpdateToDoViewModel.swift */; };
 		8B8FDD9E2A8030AB0018371E /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8FDD9D2A8030AB0018371E /* ToDoCell.swift */; };
 		8BCAF00C2A7A64F600C4BA8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCAF00B2A7A64F600C4BA8C /* AppDelegate.swift */; };
 		8BCAF00E2A7A64F600C4BA8C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCAF00D2A7A64F600C4BA8C /* SceneDelegate.swift */; };
@@ -20,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B1DC9F12A8799B8003F3D2B /* ToDoDaoRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDaoRepo.swift; sourceTree = "<group>"; };
+		8B1DC9F32A8799D8003F3D2B /* AnasayfaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnasayfaViewModel.swift; sourceTree = "<group>"; };
+		8B1DC9F52A8799FB003F3D2B /* SaveToDoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveToDoViewModel.swift; sourceTree = "<group>"; };
+		8B1DC9F72A879A11003F3D2B /* UpdateToDoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateToDoViewModel.swift; sourceTree = "<group>"; };
 		8B8FDD9D2A8030AB0018371E /* ToDoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
 		8BCAF0082A7A64F600C4BA8C /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BCAF00B2A7A64F600C4BA8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,12 +48,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B1DC9EE2A879972003F3D2B /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B1DC9EF2A879985003F3D2B /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				8B1DC9F32A8799D8003F3D2B /* AnasayfaViewModel.swift */,
+				8B1DC9F52A8799FB003F3D2B /* SaveToDoViewModel.swift */,
+				8B1DC9F72A879A11003F3D2B /* UpdateToDoViewModel.swift */,
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
+		8B1DC9F02A879997003F3D2B /* repo */ = {
+			isa = PBXGroup;
+			children = (
+				8B1DC9F12A8799B8003F3D2B /* ToDoDaoRepo.swift */,
+			);
+			path = repo;
+			sourceTree = "<group>";
+		};
 		8B8FDD992A8030050018371E /* tableview */ = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +115,7 @@
 		8BCAF01F2A7A654200C4BA8C /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				8B1DC9EF2A879985003F3D2B /* viewmodel */,
 				8B8FDD992A8030050018371E /* tableview */,
 				8BCAF0202A7A656600C4BA8C /* views */,
 			);
@@ -106,6 +135,7 @@
 		8BCAF0212A7A657500C4BA8C /* data */ = {
 			isa = PBXGroup;
 			children = (
+				8B1DC9F02A879997003F3D2B /* repo */,
 				8BCAF0222A7A657C00C4BA8C /* entity */,
 			);
 			path = data;
@@ -135,6 +165,9 @@
 			dependencies = (
 			);
 			name = ToDo;
+			packageProductDependencies = (
+				8B1DC9ED2A879972003F3D2B /* RxSwift */,
+			);
 			productName = ToDo;
 			productReference = 8BCAF0082A7A64F600C4BA8C /* ToDo.app */;
 			productType = "com.apple.product-type.application";
@@ -163,6 +196,9 @@
 				Base,
 			);
 			mainGroup = 8BCAEFFF2A7A64F600C4BA8C;
+			packageReferences = (
+				8B1DC9EC2A879972003F3D2B /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = 8BCAF0092A7A64F600C4BA8C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -194,7 +230,11 @@
 				8BCAF0102A7A64F600C4BA8C /* Anasayfa.swift in Sources */,
 				8B8FDD9E2A8030AB0018371E /* ToDoCell.swift in Sources */,
 				8BCAF00C2A7A64F600C4BA8C /* AppDelegate.swift in Sources */,
+				8B1DC9F22A8799B8003F3D2B /* ToDoDaoRepo.swift in Sources */,
+				8B1DC9F42A8799D8003F3D2B /* AnasayfaViewModel.swift in Sources */,
+				8B1DC9F82A879A11003F3D2B /* UpdateToDoViewModel.swift in Sources */,
 				8BCAF0242A7A672600C4BA8C /* SaveToDo.swift in Sources */,
+				8B1DC9F62A8799FB003F3D2B /* SaveToDoViewModel.swift in Sources */,
 				8BCAF00E2A7A64F600C4BA8C /* SceneDelegate.swift in Sources */,
 				8BCAF0282A7A78CB00C4BA8C /* ToDos.swift in Sources */,
 			);
@@ -412,6 +452,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8B1DC9EC2A879972003F3D2B /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8B1DC9ED2A879972003F3D2B /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B1DC9EC2A879972003F3D2B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8BCAF0002A7A64F600C4BA8C /* Project object */;
 }

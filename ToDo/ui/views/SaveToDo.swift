@@ -11,6 +11,8 @@ class SaveToDo: UIViewController {
     @IBOutlet weak var tvToDo: UITextView!
     @IBOutlet weak var tfTitle: UITextField!
     
+    var viewmodel = SaveToDoViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,15 +26,11 @@ class SaveToDo: UIViewController {
         
         let okeyAction = UIAlertAction(title: "Okey", style: .destructive){_ in
             if let toDoText = self.tvToDo.text, let toDoTitle = self.tfTitle.text{
-                self.save(todo: toDoText, toDoTitle: toDoTitle)
+                self.viewmodel.save(todo: toDoText, toDoTitle: toDoTitle)
             }
         }
         alert.addAction(okeyAction)
         self.present(alert, animated: true)
         
-    }
-    
-    func save(todo : String, toDoTitle:String){
-        print("To Do : \(toDoTitle) - \(todo)")
     }
 }

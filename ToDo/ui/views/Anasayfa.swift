@@ -12,28 +12,24 @@ class Anasayfa: UIViewController {
     @IBOutlet weak var toDoTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    var viewmodel = AnasayfaViewModel()
     var toDos = [ToDos]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
+
         searchBar.delegate = self
         toDoTableView.delegate = self
         toDoTableView.dataSource = self
         self.toDoTableView.backgroundColor = UIColor.clear
        
-        let l1 = ToDos(toDo_id: 1, toDo_title: "Grocery", toDo_note: "Buy a banana and an apple.")
-        let l2 = ToDos(toDo_id: 2, toDo_title: "Phone call", toDo_note: "Call your mom!")
-        let l3 = ToDos(toDo_id: 3, toDo_title: "Homework", toDo_note: "Do your homework and research about tableview.")
-        let l4 = ToDos(toDo_id: 4, toDo_title: "Meeting", toDo_note: "You have meeting at 8.00am tomorrow.")
-        let l5 = ToDos(toDo_id: 5, toDo_title: "Shopping", toDo_note: "Buy a dress for yourself.")
-        
-        toDos.append(l1)
-        toDos.append(l2)
-        toDos.append(l3)
-        toDos.append(l4)
-        toDos.append(l5)
+        _ = viewmodel.toDoList.subscribe( onNext: { list in
+            self.toDos = list
+            self.toDoTableView.reloadData()
+        })
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        viewmodel.writeToDos()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -48,7 +44,7 @@ class Anasayfa: UIViewController {
 
 extension Anasayfa : UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("Notlar ara : \(searchText)")
+        viewmodel.ara(aramakelimesi: searchText)
     }
 }
 
@@ -85,7 +81,7 @@ extension Anasayfa : UITableViewDelegate, UITableViewDataSource {
             
             let okeyAction = UIAlertAction(title: "Okey", style: .destructive){
                 action in
-                print("ToDo Sil: \(todo.id!)")
+                self.viewmodel.sil(todo_id: todo.id!)
             }
             alert.addAction(okeyAction)
             self.present(alert, animated: true)
@@ -93,3 +89,4 @@ extension Anasayfa : UITableViewDelegate, UITableViewDataSource {
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
 }
+

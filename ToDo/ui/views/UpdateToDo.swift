@@ -12,6 +12,7 @@ class UpdateToDo: UIViewController {
     @IBOutlet weak var tvDetail: UITextView!
     @IBOutlet weak var tfDetailTitle: UITextField!
     
+    var viewmodel = UpdateToDoViewModel()
     var toDos : ToDos?
     
     override func viewDidLoad() {
@@ -32,15 +33,11 @@ class UpdateToDo: UIViewController {
         
         let okeyAction = UIAlertAction(title: "Okey", style: .destructive){_ in
             if let todo_title = self.tfDetailTitle.text, let todo_detail = self.tvDetail.text, let todo = self.toDos{
-                self.update(todo_id: todo.id!, toDo_title: todo_title, toDo_detail: todo_detail)
+                self.viewmodel.update(todo_id: todo.id!, toDo_title: todo_title, toDo_detail: todo_detail)
             }
         }
         alert.addAction(okeyAction)
         self.present(alert, animated: true)
         
-    }
-    
-    func update(todo_id:Int, toDo_title:String, toDo_detail:String){
-        print("Update To Do : \(todo_id) - \(toDo_title) - \(toDo_detail)")
     }
 }
