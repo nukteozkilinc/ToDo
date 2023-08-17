@@ -12,6 +12,12 @@
 		8B1DC9F42A8799D8003F3D2B /* AnasayfaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1DC9F32A8799D8003F3D2B /* AnasayfaViewModel.swift */; };
 		8B1DC9F62A8799FB003F3D2B /* SaveToDoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1DC9F52A8799FB003F3D2B /* SaveToDoViewModel.swift */; };
 		8B1DC9F82A879A11003F3D2B /* UpdateToDoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1DC9F72A879A11003F3D2B /* UpdateToDoViewModel.swift */; };
+		8B64D9C52A8EBDCA00F6EBD3 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B64D9BA2A8EBDC900F6EBD3 /* FMResultSet.m */; };
+		8B64D9C62A8EBDCA00F6EBD3 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B64D9BB2A8EBDC900F6EBD3 /* FMDatabasePool.m */; };
+		8B64D9C72A8EBDCA00F6EBD3 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B64D9BC2A8EBDC900F6EBD3 /* FMDatabase.m */; };
+		8B64D9C82A8EBDCA00F6EBD3 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B64D9C22A8EBDCA00F6EBD3 /* FMDatabaseQueue.m */; };
+		8B64D9C92A8EBDCA00F6EBD3 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B64D9C42A8EBDCA00F6EBD3 /* FMDatabaseAdditions.m */; };
+		8B64D9CD2A8EC1E600F6EBD3 /* todo.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 8B64D9CC2A8EC1E600F6EBD3 /* todo.sqlite */; };
 		8B8FDD9E2A8030AB0018371E /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8FDD9D2A8030AB0018371E /* ToDoCell.swift */; };
 		8BCAF00C2A7A64F600C4BA8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCAF00B2A7A64F600C4BA8C /* AppDelegate.swift */; };
 		8BCAF00E2A7A64F600C4BA8C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCAF00D2A7A64F600C4BA8C /* SceneDelegate.swift */; };
@@ -29,6 +35,20 @@
 		8B1DC9F32A8799D8003F3D2B /* AnasayfaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnasayfaViewModel.swift; sourceTree = "<group>"; };
 		8B1DC9F52A8799FB003F3D2B /* SaveToDoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveToDoViewModel.swift; sourceTree = "<group>"; };
 		8B1DC9F72A879A11003F3D2B /* UpdateToDoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateToDoViewModel.swift; sourceTree = "<group>"; };
+		8B64D9B82A8EBDAF00F6EBD3 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		8B64D9B92A8EBDC900F6EBD3 /* ToDo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ToDo-Bridging-Header.h"; sourceTree = "<group>"; };
+		8B64D9BA2A8EBDC900F6EBD3 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		8B64D9BB2A8EBDC900F6EBD3 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		8B64D9BC2A8EBDC900F6EBD3 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		8B64D9BD2A8EBDC900F6EBD3 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		8B64D9BE2A8EBDC900F6EBD3 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		8B64D9BF2A8EBDCA00F6EBD3 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		8B64D9C02A8EBDCA00F6EBD3 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		8B64D9C12A8EBDCA00F6EBD3 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		8B64D9C22A8EBDCA00F6EBD3 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		8B64D9C32A8EBDCA00F6EBD3 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		8B64D9C42A8EBDCA00F6EBD3 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		8B64D9CC2A8EC1E600F6EBD3 /* todo.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = todo.sqlite; sourceTree = "<group>"; };
 		8B8FDD9D2A8030AB0018371E /* ToDoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
 		8BCAF0082A7A64F600C4BA8C /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BCAF00B2A7A64F600C4BA8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +93,14 @@
 			path = repo;
 			sourceTree = "<group>";
 		};
+		8B64D9B72A8EBDAF00F6EBD3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8B64D9B82A8EBDAF00F6EBD3 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8B8FDD992A8030050018371E /* tableview */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +114,7 @@
 			children = (
 				8BCAF00A2A7A64F600C4BA8C /* ToDo */,
 				8BCAF0092A7A64F600C4BA8C /* Products */,
+				8B64D9B72A8EBDAF00F6EBD3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,6 +137,19 @@
 				8BCAF0142A7A64F700C4BA8C /* Assets.xcassets */,
 				8BCAF0162A7A64F700C4BA8C /* LaunchScreen.storyboard */,
 				8BCAF0192A7A64F700C4BA8C /* Info.plist */,
+				8B64D9CC2A8EC1E600F6EBD3 /* todo.sqlite */,
+				8B64D9BD2A8EBDC900F6EBD3 /* FMDatabase.h */,
+				8B64D9BC2A8EBDC900F6EBD3 /* FMDatabase.m */,
+				8B64D9C02A8EBDCA00F6EBD3 /* FMDatabaseAdditions.h */,
+				8B64D9C42A8EBDCA00F6EBD3 /* FMDatabaseAdditions.m */,
+				8B64D9C12A8EBDCA00F6EBD3 /* FMDatabasePool.h */,
+				8B64D9BB2A8EBDC900F6EBD3 /* FMDatabasePool.m */,
+				8B64D9BE2A8EBDC900F6EBD3 /* FMDatabaseQueue.h */,
+				8B64D9C22A8EBDCA00F6EBD3 /* FMDatabaseQueue.m */,
+				8B64D9C32A8EBDCA00F6EBD3 /* FMDB.h */,
+				8B64D9BF2A8EBDCA00F6EBD3 /* FMResultSet.h */,
+				8B64D9BA2A8EBDC900F6EBD3 /* FMResultSet.m */,
+				8B64D9B92A8EBDC900F6EBD3 /* ToDo-Bridging-Header.h */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -184,6 +226,7 @@
 				TargetAttributes = {
 					8BCAF0072A7A64F600C4BA8C = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 					};
 				};
 			};
@@ -214,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BCAF0182A7A64F700C4BA8C /* LaunchScreen.storyboard in Resources */,
+				8B64D9CD2A8EC1E600F6EBD3 /* todo.sqlite in Resources */,
 				8BCAF0152A7A64F700C4BA8C /* Assets.xcassets in Resources */,
 				8BCAF0132A7A64F600C4BA8C /* Main.storyboard in Resources */,
 			);
@@ -228,10 +272,15 @@
 			files = (
 				8BCAF0262A7A673A00C4BA8C /* UpdateToDo.swift in Sources */,
 				8BCAF0102A7A64F600C4BA8C /* Anasayfa.swift in Sources */,
+				8B64D9C62A8EBDCA00F6EBD3 /* FMDatabasePool.m in Sources */,
+				8B64D9C72A8EBDCA00F6EBD3 /* FMDatabase.m in Sources */,
 				8B8FDD9E2A8030AB0018371E /* ToDoCell.swift in Sources */,
+				8B64D9C82A8EBDCA00F6EBD3 /* FMDatabaseQueue.m in Sources */,
 				8BCAF00C2A7A64F600C4BA8C /* AppDelegate.swift in Sources */,
+				8B64D9C92A8EBDCA00F6EBD3 /* FMDatabaseAdditions.m in Sources */,
 				8B1DC9F22A8799B8003F3D2B /* ToDoDaoRepo.swift in Sources */,
 				8B1DC9F42A8799D8003F3D2B /* AnasayfaViewModel.swift in Sources */,
+				8B64D9C52A8EBDCA00F6EBD3 /* FMResultSet.m in Sources */,
 				8B1DC9F82A879A11003F3D2B /* UpdateToDoViewModel.swift in Sources */,
 				8BCAF0242A7A672600C4BA8C /* SaveToDo.swift in Sources */,
 				8B1DC9F62A8799FB003F3D2B /* SaveToDoViewModel.swift in Sources */,
@@ -381,6 +430,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -398,6 +448,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.info.ToDo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ToDo/ToDo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -408,6 +460,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -425,6 +478,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.info.ToDo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ToDo/ToDo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

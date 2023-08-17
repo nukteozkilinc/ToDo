@@ -12,38 +12,89 @@ class ToDoDaoRepo{
     
     var todoList = BehaviorSubject<[ToDos]>(value:[ToDos]())
     
+    let db:FMDatabase?
+    
+    init(){
+        let dosyaYolu = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        let veritabaniURL = URL(fileURLWithPath: dosyaYolu).appendingPathComponent("todo.sqlite")
+        db = FMDatabase(path: veritabaniURL.path)
+    }
+    
     func save(todo : String, toDoTitle:String){
-        print("To Do : \(toDoTitle) - \(todo)")
+        db?.open()
+        do{
+            try db!.executeUpdate("INSERT INTO tododatabase (todo_title,todo_note) VALUES (?,?)", values: [toDoTitle,todo])
+        }catch{
+            print(error.localizedDescription)
+        }
+        db?.close()
     }
     
     func update(todo_id:Int, toDo_title:String, toDo_detail:String){
-        print("Update To Do : \(todo_id) - \(toDo_title) - \(toDo_detail)")
+        db?.open()
+        do{
+            try db!.executeUpdate("UPDATE tododatabase SET todo_title = ?, todo_note = ? WHERE todo_id = ?", values: [toDo_title,toDo_detail,todo_id])
+        }catch{
+            print(error.localizedDescription)
+        }
+        db?.close()
     }
     
     func ara(aramakelimesi : String){
-        print("Aranan ToDo: \(aramakelimesi)")
+        db?.open()
+        var list = [ToDos]()
+        
+        do{
+            let result = try db!.executeQuery("SELECT * FROM tododatabase WHERE todo_title like '%\(aramakelimesi)%'", values: nil)
+            
+            while result.next() {
+                let todo_id = Int(result.string(forColumn: "todo_id"))!
+                let todo_title = result.string(forColumn: "todo_title")!
+                let todo_note = result.string(forColumn: "todo_note")!
+                
+                let todo = ToDos(toDo_id: todo_id, toDo_title: todo_title, toDo_note: todo_note)
+                list.append(todo)
+            }
+            
+            todoList.onNext(list)//Tetikleme
+        }catch{
+            print(error.localizedDescription)
+        }
+        
+        db?.close()
     }
     
     func sil(todo_id:Int){
-        print("To Do Sil: \(todo_id)")
+        db?.open()
+        do{
+            try db!.executeUpdate("DELETE FROM tododatabase WHERE todo_id = ?", values: [todo_id])
+        }catch{
+            print(error.localizedDescription)
+        }
+        db?.close()
     }
     
     func writeToDos() {
         
+        db?.open()
         var toDos = [ToDos]()
-
-        let l1 = ToDos(toDo_id: 1, toDo_title: "Grocery", toDo_note: "Buy a banana and an apple.")
-        let l2 = ToDos(toDo_id: 2, toDo_title: "Phone call", toDo_note: "Call your mom!")
-        let l3 = ToDos(toDo_id: 3, toDo_title: "Homework", toDo_note: "Do your homework and research about tableview.")
-        let l4 = ToDos(toDo_id: 4, toDo_title: "Meeting", toDo_note: "You have meeting at 8.00am tomorrow.")
-        let l5 = ToDos(toDo_id: 5, toDo_title: "Shopping", toDo_note: "Buy a dress for yourself.")
         
-        toDos.append(l1)
-        toDos.append(l2)
-        toDos.append(l3)
-        toDos.append(l4)
-        toDos.append(l5)
+        do{
+            let result = try db!.executeQuery("SELECT * FROM tododatabase", values: nil)
+            while result.next() {
+                let todo_id = Int(result.string(forColumn: "todo_id"))!
+                let todo_title = result.string(forColumn: "todo_title")!
+                let todo_note = result.string(forColumn: "todo_note")!
+                
+                let todo = ToDos(toDo_id: todo_id, toDo_title: todo_title, toDo_note: todo_note)
+                toDos.append(todo)
+            }
+            
+            todoList.onNext(toDos)//Tetikleme
+        }catch{
+            print(error.localizedDescription)
+        }
         
-        todoList.onNext(toDos)
+        db?.close()
     }
 }
